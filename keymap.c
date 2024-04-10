@@ -15,6 +15,7 @@ const key_override_t comma_ko = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_QUES);
 const key_override_t equal_ko = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, LSFT(KC_EQL));
 const key_override_t quote_ko = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
 const key_override_t semicolon_ko = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
+const key_override_t backspace_ko = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
 	&period_ko,
@@ -23,21 +24,22 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&equal_ko,
 	&quote_ko,
 	&semicolon_ko,
+    &backspace_ko,
 	NULL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_IEON] = LAYOUT_planck_grid(
-            KC_ESC,  KC_DOT,  KC_Y,    KC_A,    KC_AMPR,    KC_GRV,  KC_Q,   KC_F,       KC_L,    KC_G,    KC_K,  KC_J   ,
+            QK_GESC, KC_DOT,  KC_Y,    KC_A,    KC_AMPR,    _______,  KC_Q,   KC_F,       KC_L,    KC_G,    KC_K,  KC_J   ,
 		    KC_BSPC, KC_I,    KC_E,    KC_O,    KC_N,       KC_COMM, KC_B,   KC_H,       KC_T,    KC_S,    KC_C,  KC_D   ,
 			KC_LCTL, KC_UNDS, KC_MINS, KC_QUOT, KC_U,       KC_SCLN, KC_R,   KC_X,       KC_W,    KC_M,    KC_P,  KC_LSFT,
 			KC_TAB,  KC_SYRQ, KC_LALT, KC_LGUI, MO(_LOWER), KC_SPC,  KC_ENT, MO(_RAISE), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
     ),
 
     [_LOWER] = LAYOUT_planck_grid(
-                _______, KC_BSLS, KC_PERC, KC_SLSH, _______, KC_CIRC, _______, _______, KC_V,    KC_Z,    _______, _______,
-		        KC_DEL , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                KC_GRV,  KC_BSLS, KC_PERC, KC_SLSH, _______, _______, _______, _______, KC_V,    KC_Z,    _______, _______,
+		        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                 _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END),
 
@@ -53,10 +55,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 				LCA(KC_F11), LCA(KC_F7), LCA(KC_F5), LCA(KC_F3), LCA(KC_F1), LCA(KC_F9), LCA(KC_F10), LCA(KC_F2), LCA(KC_F4), LCA(KC_F6), LCA(KC_F8), LCA(KC_F12),
 				_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 };
-
-/*bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    return true;
-}*/
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
