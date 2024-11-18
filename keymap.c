@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LOWER] = LAYOUT_planck_grid(
-         LALT(KC_ESC), LALT(KC_0), LALT(KC_1), LALT(KC_2), LALT(KC_3), _______, _______, _______, KC_V,    KC_Z,    _______, _______,
+         LALT(KC_ESC), KC_BSLS, KC_PERC, KC_SLSH, _______, _______, _______, _______, KC_V,    KC_Z,    _______, _______,
 		 LALT(KC_BSPC), LALT(KC_I), LALT(KC_E), LALT(KC_O), LALT(KC_N), _______, _______, _______, _______, _______, _______, _______,
          _______, LALT(KC_4), LALT(KC_5), LALT(KC_6), LALT(KC_7), _______, _______, _______, _______, _______, _______, _______,
          _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_ADJUST] = LAYOUT_planck_grid(
-        _______, KC_BSLS, KC_PERC, KC_SLSH, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
 		KC_F11, KC_F7, KC_F5, KC_F3, KC_F1, KC_F9, KC_F10, KC_F2, KC_F4, KC_F6, KC_F8, KC_F12,
 		LCA(KC_F11), LCA(KC_F7), LCA(KC_F5), LCA(KC_F3), LCA(KC_F1), LCA(KC_F9), LCA(KC_F10), LCA(KC_F2), LCA(KC_F4), LCA(KC_F6), LCA(KC_F8), LCA(KC_F12),
 		KC_PSCR, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
